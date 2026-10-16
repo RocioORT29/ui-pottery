@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="esp">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,51 +9,54 @@
   <body>
     <div>
       <header>
-        <h1>Taller de cerámica</h1>
-        <p>Un espacio para crear piezas con tus propias manos.</p>
-        <img src="/src/interface/taller.svg" width="200" height="200" />
+        <h1 class="texto">Taller de cerámica</h1>
+        <p class="texto">Un espacio para crear piezas con tus propias manos.</p>
+        <img src="/src/interface/taller.svg" width="200" height="200" alt="foto de maceta" />
         <hr />
-        <p>Abierto de lunes a viernes, de 10:00 a 19:00.</p>
+        <p class="texto">Abierto de lunes a viernes, de 10:00 a 19:00.</p>
       </header>
       <main>
         <section>
-          <h4>Próximos talleres</h4>
+          <h2 class="texto" >Próximos talleres</h2>
           <ul>
-            <li>Iniciación — USD 25 · Martes 18:00</li>
-            <li>Modelado a mano — USD 20 · Jueves 17:00</li>
-            <li>Esmaltado creativo — USD 18 · Sábado 11:00</li>
+            <li class="texto">Iniciación — USD 25 · Martes 18:00</li>
+            <li class="texto">Modelado a mano — USD 20 · Jueves 17:00</li>
+            <li class="texto">Esmaltado creativo — USD 18 · Sábado 11:00</li>
           </ul>
         </section>
         <section>
-          <h6>Consultas e inscripciones</h6>
+          <h3 class="texto">Consultas e inscripciones</h3>
           <form id="contact-form">
             <div>
-              <input id="name" name="name" type="text" placeholder="Nombre" />
+              <input id="name" name="name" type="text" placeholder="Nombre" class="form-control" />
+              <label for="name" class="texto" class="form-label" >Nombre</label>
             </div>
             <div>
-              <input id="email" name="email" type="email" placeholder="Correo electrónico" />
+              <input id="email" name="email" type="email" placeholder="Correo electrónico" class="form-control" />
+              <label for="email" class="texto" class="form-label">Email</label>
             </div>
             <div>
-              <textarea id="message" name="message" rows="3" placeholder="Tu consulta"></textarea>
+              <textarea id="message" name="message" rows="3" placeholder="Tu consulta" class="form-control"></textarea>
+              <label for="message" class="texto" class="form-label">Mensaje</label>
             </div>
             <fieldset>
-              <legend>¿Ya asististe a uno de nuestros cursos?</legend>
-              <div>
-                <input type="radio" id="attended-yes" name="attended" value="yes" required />
-                <label for="attended-yes">Sí</label>
+              <legend class="texto">¿Ya asististe a uno de nuestros cursos?</legend>
+              <div class="form-field">
+                <input type="radio" id="attended-yes" name="attended" value="yes" required  class="radio"/>
+                <label for="attended-yes" class="texto">Sí</label>
               </div>
-              <div>
-                <input type="radio" id="attended-no" name="attended" value="no" />
-                <label for="attended-no">No, sería mi primera vez</label>
+              <div class="form-field">
+                <input type="radio" id="attended-no" name="attended" value="no" class="radio"/>
+                <label for="attended-no" class="texto">No, sería mi primera vez</label>
               </div>
             </fieldset>
             <div>
-              <label for="notifications">¿Te gustaría recibir notificaciones?</label>
-              <div>
+              <label for="notifications" class="texto">¿Te gustaría recibir notificaciones?</label>
+              <div class="switch">
                 <input type="checkbox" id="notifications" name="notifications" role="switch" switch />
               </div>
             </div>
-            <button type="submit">Enviar consulta</button>
+            <button type="submit" class="btn-solid" class="theme-primary">Enviar consulta</button>
             <p id="status" role="status"></p>
           </form>
         </section>
@@ -63,3 +66,10 @@
     <script type="module" src="/src/interface/main.ts"></script>
   </body>
 </html>
+
+<!-- ¿Qué cosas hice? 
+ para texto alternativo en la imagen hay que poner el atributo alt y ponerle un texto
+ le puse labels a campos de texto, asociando los labels a los id de cada campo
+ cree una clase texto que la puse a todos los textos de la pagina y en css hice que la clase texto tenga color negro
+ cambie el lang que antes decia esp y no es un valor valido, tiene que se es para referirse a español
+ tambien cambie las advertencias, como me decia que se salteaba alturas de titulo (tipo pasaba de h1 a h4) puse h2-->
